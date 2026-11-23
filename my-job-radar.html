@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a33ff">
+<title>My Job Radar — Find your next opportunity</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+:root{--blue:#1a33ff;--ink:#111827;--muted:#687086;--line:#e6e9f2;--soft:#f5f7ff}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f8fc;color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.nav{max-width:1100px;margin:auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:-.6px;font-size:20px}
+.radar{width:34px;height:34px;border-radius:11px;background:var(--blue);display:grid;place-items:center;color:white;font-size:18px}
+.tag{font-size:11px;font-weight:700;color:var(--blue);background:#eef0ff;padding:8px 11px;border-radius:30px}
+main{max-width:1100px;margin:44px auto;padding:0 24px 60px}
+.hero{text-align:center;margin-bottom:30px}
+.eyebrow{color:var(--blue);font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,48px);letter-spacing:-2px;margin:12px 0}
+.sub{color:var(--muted);font-size:14px;line-height:1.7;max-width:600px;margin:auto}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 10px 35px rgba(22,34,90,.045)}
+.panel h2{font-size:16px;margin:0 0 21px;letter-spacing:-.3px}
+.field{margin-bottom:18px}
+label,.field-title{display:block;font-size:12px;font-weight:700;margin-bottom:8px}
+input[type=text],select{width:100%;height:45px;border:1px solid #dfe3ee;border-radius:9px;padding:0 13px;font:500 13px Montserrat,Arial;color:var(--ink);background:#fff;outline:none}
+input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1a33ff16}
+.hint{font-size:10px;color:#8991a4;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:11px 8px}
+.check{display:flex;align-items:center;gap:8px;font-size:11px;color:#41495b;font-weight:500}
+input[type=checkbox]{accent-color:var(--blue);width:15px;height:15px;margin:0}
+.radio-row{display:flex;gap:16px;flex-wrap:wrap}
+.radio-row label{display:flex;gap:7px;align-items:center;font-size:11px;font-weight:500;margin:0}
+input[type=radio]{accent-color:var(--blue)}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:23px}
+button{border:0;border-radius:10px;padding:14px 12px;font:700 11px Montserrat,Arial;cursor:pointer;transition:.18s}
+button:hover{transform:translateY(-1px);filter:brightness(.96)}
+.primary{background:var(--blue);color:white;box-shadow:0 7px 16px #1a33ff30}
+.secondary{background:#eef0ff;color:var(--blue)}
+.preview{background:#101735;color:#fff;border-radius:13px;padding:18px;min-height:148px}
+.preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}
+.preview-title{font-size:11px;font-weight:700}
+.live{font-size:9px;color:#aeb8ff;display:flex;align-items:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:50%;background:#58e6a5}
+#query{font:11px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#d9defe;overflow-wrap:anywhere;white-space:pre-wrap}
+.preview-note{font-size:10px;color:#9aa4c7;line-height:1.6;margin-top:12px}
+.tip{margin-top:18px;background:#f0f3ff;border-radius:12px;padding:15px;font-size:11px;line-height:1.7;color:#4e5878}
+.tip strong{color:var(--blue)}
+footer{text-align:center;color:#9299aa;font-size:10px;padding:0 20px 28px}
+@media(max-width:760px){main{margin:28px auto;padding:0 15px 40px}.layout{grid-template-columns:1fr}.panel{padding:19px}.nav{padding:17px 16px}.tag{font-size:9px}.buttons{grid-template-columns:1fr}.hero{margin-bottom:22px}}
+@media(max-width:380px){.two{grid-template-columns:1fr}.checks{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand"><span class="radar">⌖</span> My Job Radar</div><span class="tag">YOUR NEXT MOVE STARTS HERE</span></div></header>
+<main>
+<section class="hero"><div class="eyebrow">Search smarter. Move faster.</div><h1>Your next job is out there.</h1><p class="sub">Build one focused search across the career sites you care about. Preview your query, then launch it in your preferred search engine.</p></section>
+<div class="layout">
+<section class="panel">
+<h2>⚡ Build your job search</h2>
+<div class="field"><label for="titles">Job titles</label><input id="titles" type="text" placeholder="e.g. Product Manager, UX Designer, Marketing Manager"><div class="hint">Separate multiple job titles with commas.</div></div>
+<div class="two">
+<div class="field"><label for="location">Location</label><input id="location" type="text" placeholder="e.g. Boston, Remote"></div>
+<div class="field"><label for="posted">Posted</label><select id="posted"><option value="">Any time</option><option value="past 24 hours">Past 24 hours</option><option value="past week">Past week</option><option value="past month">Past month</option></select></div>
+</div>
+<div class="field"><span class="field-title">Career sites</span><div class="checks" id="sites">
+<label class="check"><input type="checkbox" value="Greenhouse" checked> Greenhouse</label>
+<label class="check"><input type="checkbox" value="Lever" checked> Lever</label>
+<label class="check"><input type="checkbox" value="Ashby" checked> Ashby</label>
+<label class="check"><input type="checkbox" value="Workable" checked> Workable</label>
+<label class="check"><input type="checkbox" value="Teamtailor" checked> Teamtailor</label>
+<label class="check"><input type="checkbox" value="SmartRecruiters" checked> SmartRecruiters</label>
+<label class="check"><input type="checkbox" value="Workday" checked> Workday</label>
+<label class="check"><input type="checkbox" value="Welcome to the Jungle" checked> Welcome to the Jungle</label>
+</div></div>
+<div class="two">
+<div class="field"><label for="include">Include words <span style="color:#9299aa;font-weight:500">(optional)</span></label><input id="include" type="text" placeholder="e.g. junior, hybrid"></div>
+<div class="field"><label for="exclude">Exclude words <span style="color:#9299aa;font-weight:500">(optional)</span></label><input id="exclude" type="text" placeholder="e.g. senior, internship"></div>
+</div>
+<div class="field"><span class="field-title">Search engine</span><div class="radio-row">
+<label><input type="radio" name="engine" value="google" checked> Google</label>
+<label><input type="radio" name="engine" value="bing"> Bing</label>
+<label><input type="radio" name="engine" value="duckduckgo"> DuckDuckGo</label>
+</div></div>
+<div class="buttons"><button class="primary" id="find">Find jobs ↗</button><button class="secondary" id="linkedin">Find hiring teams ↗</button></div>
+</section>
+<aside class="panel">
+<h2>Live search preview</h2>
+<div class="preview"><div class="preview-top"><span class="preview-title">Your search query</span><span class="live"><i class="dot"></i> LIVE PREVIEW</span></div><div id="query" aria-live="polite"></div></div>
+<div class="tip"><strong>How it works</strong><br>Choose your job titles, location and filters. Your search query updates automatically. Click <b>Find jobs</b> to open matching listings in a new tab, or search for hiring teams on LinkedIn.</div>
+<div class="tip"><strong>Quick tip</strong><br>Try broad job titles first, then narrow your search with include and exclude words to discover more relevant roles.</div>
+</aside>
+</div>
+</main>
+<footer>My Job Radar · A simple tool for a more focused job hunt.</footer>
+<script>
+const $=id=>document.getElementById(id);
+const fields=['titles','location','posted','include','exclude'];
+const siteInputs=[...document.querySelectorAll('#sites input')];
+const engineInputs=[...document.querySelectorAll('input[name="engine"]')];
+function quotedList(value){return value.split(',').map(x=>x.trim()).filter(Boolean).map(x=>'"'+x.replace(/"/g,'')+'"')}
+function buildQuery(mode='jobs'){
+ const titles=quotedList($('titles').value);
+ const sites=siteInputs.filter(x=>x.checked).map(x=>x.value);
+ const parts=[];
+ if(titles.length) parts.push('('+titles.join(' OR ')+')');
+ if($('location').value.trim()) parts.push('"'+$('location').value.trim().replace(/"/g,'')+'"');
+ if(sites.length) parts.push('('+sites.map(s=>'"'+s+'"').join(' OR ')+')');
+ if($('posted').value) parts.push($('posted').value);
+ if($('include').value.trim()) parts.push(quotedList($('include').value).join(' OR '));
+ if($('exclude').value.trim()) parts.push(...quotedList($('exclude').value).map(x=>'-'+x));
+ if(mode==='linkedin'){return 'site:linkedin.com/in/ ("recruiter" OR "talent acquisition" OR "hiring manager") '+(titles.length?titles.join(' OR '):'"'+$('titles').value+'"')+($('location').value.trim()?' "'+$('location').value.trim()+'"':'')}
+ return parts.length?parts.join(' '):'Add a job title to build your search query.';
+}
+function update(){ $('query').textContent=buildQuery(); }
+fields.forEach(id=>$(id).addEventListener('input',update));
+$('posted').addEventListener('change',update);
+siteInputs.forEach(x=>x.addEventListener('change',update));
+engineInputs.forEach(x=>x.addEventListener('change',update));
+function searchUrl(q){
+ const engine=document.querySelector('input[name="engine"]:checked').value;
+ if(engine==='bing') return 'https://www.bing.com/search?q='+encodeURIComponent(q);
+ if(engine==='duckduckgo') return 'https://duckduckgo.com/?q='+encodeURIComponent(q);
+ return 'https://www.google.com/search?q='+encodeURIComponent(q);
+}
+$('find').addEventListener('click',()=>{const q=buildQuery();if(q.startsWith('Add a job')){$('titles').focus();return;}window.open(searchUrl(q),'_blank','noopener,noreferrer');});
+$('linkedin').addEventListener('click',()=>{const q=buildQuery('linkedin');window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank','noopener,noreferrer');});
+update();
+</script>
+</body>
+</html>
